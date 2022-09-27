@@ -20,6 +20,7 @@ const mostrarProductos = (productos) => {
 
         const boton = document.getElementById(`boton${producto.id}`);
         boton.addEventListener('click', ()=>{
+            console.log('hola')
             if(carritoDeCompras.includes(producto)){
                 alert(`El ${producto.nombre} ya se encuentra en su carrito, SE SUMA CANTIDAD`)
                 producto.cantidad++
