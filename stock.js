@@ -1,5 +1,4 @@
 const nombreSeccion = 'Controladores Midi'
-
 const productos = [
     {
         id:1,

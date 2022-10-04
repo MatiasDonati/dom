@@ -1,4 +1,4 @@
-const mostrarProductos = (productos) => {
+const mostrarProductos = () => {
 
     const etiquetaTitulo = document.getElementById('titulo')
     etiquetaTitulo.innerHTML = `<h2>....${nombreSeccion}</h2>`
@@ -24,19 +24,11 @@ const mostrarProductos = (productos) => {
             if(carritoDeCompras.includes(producto)){
                 alert(`El ${producto.nombre} ya se encuentra en su carrito, SE SUMA CANTIDAD`)
                 producto.cantidad++
-                // console.log(producto);
-                carrito(producto.id)
-                // console.log(carritoDeCompras)
-                const contador = document.getElementById('contador-carrito')
-                contador.innerHTML = `${carritoDeCompras.length}`
             }else{
-                carrito(producto.id)
-                const contador = document.getElementById('contador-carrito')
-                contador.innerHTML = `${carritoDeCompras.length}`
-                // console.log(carritoDeCompras)
                 alert(`Se agrego ${producto.nombre} al carrito`)
             }
+            carrito(producto.id)
         })
     })
 };
-mostrarProductos(productos)
+// mostrarProductos()
