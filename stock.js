@@ -4,7 +4,7 @@ const productos = [
         id:1,
         nombre:'Akai LPK25',
         desc:'Controlador Midi',
-        precio:90000,
+        precio:9000,
         img:'src/img/Akai LPK25.webp',
         cantidad:1
     },

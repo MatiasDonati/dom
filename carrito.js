@@ -2,22 +2,24 @@ let carritoDeCompras = [];
 
 const carrito = (productoId) => {
 
+    // Cuando aplico esto se me desactiva la entrada al else y no hace producto.cantidad++ sino q lo mete de nuevo al objeto entero
     if(localStorage.getItem('carrito')){
         carritoDeCompras = obtenerCarritoStorage()
     }
 
     let producto = productos.find( producto => producto.id == productoId);
-
+    
+    console.log(carritoDeCompras.includes(producto));
 
     if(!carritoDeCompras.includes(producto)){
         carritoDeCompras.push(producto);
     }else{
+        console.log('PRODUCTO CANTIDAD++');
         producto.cantidad++
     }
 
     contadorCarrito();
     guardarCarritoStorage(carritoDeCompras)
-
 
     const contenedorCarrito = document.getElementById('carrito-contenedor');
     const productosEnElCarritoModal = () =>{
@@ -37,19 +39,18 @@ const carrito = (productoId) => {
         })
     }
     productosEnElCarritoModal()
-    
-    // console.log(carritoDeCompras);
-    // // Boton Agregar un producto del carrito
-    // const botonAgregar = document.getElementById(`agregar-uno${producto.id}`)
-    // botonAgregar.addEventListener('click', ()=>{
-    //     console.log('Agregar Producto');
-    // })
 
-    // // Boton eliminarUno producto del carrito
-    // const botonEliminarUno = document.getElementById(`eliminar-uno${producto.id}`)
-    // botonEliminarUno.addEventListener('click', () =>{
-    //     console.log('Eliminar un Producto');
-    // })
+    // Boton Agregar un producto del carrito
+    const botonAgregar = document.getElementById(`agregar-uno${producto.id}`)
+    botonAgregar.addEventListener('click', ()=>{
+        console.log('Agregar Producto');
+    })
+
+    // Boton eliminarUno producto del carrito
+    const botonEliminarUno = document.getElementById(`eliminar-uno${producto.id}`)
+    botonEliminarUno.addEventListener('click', () =>{
+        console.log('Eliminar un Producto');
+    })
 };
 
 // Contador del Carrito
