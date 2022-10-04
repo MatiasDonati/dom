@@ -1,73 +1,55 @@
-const carritoDeCompras = [];
+let carritoDeCompras = [];
 
 const carrito = (productoId) => {
-    let producto = productos.find( producto => producto.id == productoId);
+
     if(localStorage.getItem('carrito')){
-        
+        carritoDeCompras = obtenerCarritoStorage()
     }
+
+    let producto = productos.find( producto => producto.id == productoId);
+
+
     if(!carritoDeCompras.includes(producto)){
         carritoDeCompras.push(producto);
+    }else{
+        producto.cantidad++
     }
+
     contadorCarrito();
     guardarCarritoStorage(carritoDeCompras)
 
+
     const contenedorCarrito = document.getElementById('carrito-contenedor');
-        const productosEnElCarritoModal = () =>{
-            contenedorCarrito.innerHTML = ''
-            carritoDeCompras.forEach(producto => {
-                let div = document.createElement('div')
-                div.classList.add('productoEnCarrito')
-                div.innerHTML = `<p>${producto.nombre}</p>
-                <p>Precio: ${producto.precio}</p>
-                <p id="cantidad${producto.id}">Cantidad: ${producto.cantidad}</p>
-                <button id="eliminar-uno${producto.id}" value="${producto.id}" class="eliminar-uno" >"-"</button>
-                <button id="agregar-uno${producto.id}" value="${producto.id}" class="agregar-uno" >"+"</button>
-                <button id="eliminar${producto.id}" value="${producto.id}" class="boton-eliminar" ><i class="fa-solid fa-trash-can"></i></button>
-                <p></p>`;
+    const productosEnElCarritoModal = () =>{
+        contenedorCarrito.innerHTML = ''
+        carritoDeCompras.forEach(producto => {
+            const div = document.createElement('div')
+            div.classList.add('productoEnCarrito')
+            div.innerHTML = `<p>${producto.nombre}</p>
+            <p>Precio: ${producto.precio}</p>
+            <p id="cantidad${producto.id}">Cantidad: ${producto.cantidad}</p>
+            <button id="eliminar-uno${producto.id}" value="${producto.id}" class="eliminar-uno" >"-"</button>
+            <button id="agregar-uno${producto.id}" value="${producto.id}" class="agregar-uno" >"+"</button>
+            <button id="eliminar${producto.id}" value="${producto.id}" class="boton-eliminar" ><i class="fa-solid fa-trash-can"></i></button>
+            <p></p>`;
 
-                contenedorCarrito.appendChild(div)
-            })
-        }
-        productosEnElCarritoModal()
-
-        // Boton eliminar producto del carrito
-        const boton = document.getElementById(`eliminar${producto.id}`);
-        boton.addEventListener('click', ()=>{
-            console.log('EVENTO CLICK ELIMINAR!');
-            console.log(carritoDeCompras);
-            if(producto.cantidad > 1){
-                console.log('tengo mas de uno!!!!!');
-                producto.cantidad--
-                alert(`Borrar un producto de: ${producto.nombre}`)
-                contadorCarrito();
-                productosEnElCarritoModal()
-                guardarCarritoStorage(carritoDeCompras)
-                console.log(carritoDeCompras);
-            }else{
-                console.log('tengo solo uunooooo!!!!');
-                let index = carritoDeCompras.indexOf(producto)
-                carritoDeCompras.splice(index, 1)
-                console.log(carritoDeCompras);
-                alert(`Se ELIMINO ${producto.nombre} del carrito`)
-                contadorCarrito();
-                productosEnElCarritoModal()
-                guardarCarritoStorage(carritoDeCompras)
-                contenedorCarrito.removeChild(div);
-
-            }
-        } )
-
-        // Boton Agregar un producto del carrito
-        const botonAgregar = document.getElementById(`agregar-uno${producto.id}`)
-        botonAgregar.addEventListener('click', ()=>{
-            console.log('Agregar Producto');
+            contenedorCarrito.appendChild(div)
         })
+    }
+    productosEnElCarritoModal()
+    
+    // console.log(carritoDeCompras);
+    // // Boton Agregar un producto del carrito
+    // const botonAgregar = document.getElementById(`agregar-uno${producto.id}`)
+    // botonAgregar.addEventListener('click', ()=>{
+    //     console.log('Agregar Producto');
+    // })
 
-        // Boton eliminarUno producto del carrito
-        const botonEliminarUno = document.getElementById(`eliminar-uno${producto.id}`)
-        botonEliminarUno.addEventListener('click', () =>{
-            console.log('Eliminar un Producto');
-        })
+    // // Boton eliminarUno producto del carrito
+    // const botonEliminarUno = document.getElementById(`eliminar-uno${producto.id}`)
+    // botonEliminarUno.addEventListener('click', () =>{
+    //     console.log('Eliminar un Producto');
+    // })
 };
 
 // Contador del Carrito
@@ -86,6 +68,7 @@ const contadorCarrito = () => {
 // pintarCarrito recibe por parametro un array de objetos
 const pintarCarrito = (carrito) => {
     const contenedorCarrito = document.getElementById('carrito-contenedor');
+    contenedorCarrito.innerHTML = ''
             carrito.forEach(producto => {
                 let div = document.createElement('div')
                 div.classList.add('productoEnCarrito')
@@ -110,3 +93,10 @@ const pintarCarrito = (carrito) => {
             precioTotal.innerHTML = `Total: $${totalPreciosStorage}`
 }
 
+const eliminarProducto = (productoId) => {
+    const productoAEliminar = productos.find(producto => producto.id == productoId);
+    let index = carritoDeCompras.indexOf(productoAEliminar);
+    carritoDeCompras.splice(index, 1)
+    guardarCarritoStorage(carritoDeCompras);
+    pintarCarrito(carritoDeCompras);
+}
