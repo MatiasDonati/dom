@@ -8,7 +8,7 @@ const carrito = (productoId) => {
     }
 
     let producto = productos.find( producto => producto.id == productoId);
-    
+
     console.log(carritoDeCompras.includes(producto));
 
     if(!carritoDeCompras.includes(producto)){
