@@ -15,14 +15,13 @@ const carrito = (productoId) => {
     console.log(carritoDeCompras.includes(producto));
 
     // Con IF Ternario
-    // !carritoDeCompras.includes(producto) ? carritoDeCompras.push(producto) : producto.cantidad++
-
-    if(!carritoDeCompras.includes(producto)){
-        carritoDeCompras.push(producto);
-    }else{
-        console.log('PRODUCTO CANTIDAD++');
-        producto.cantidad++
-    }
+    carritoDeCompras.includes(producto) ? producto.cantidad++ : carritoDeCompras.push(producto);
+    // if(!carritoDeCompras.includes(producto)){
+    //     carritoDeCompras.push(producto);
+    // }else{
+    //     console.log('PRODUCTO CANTIDAD++');
+    //     producto.cantidad++
+    // }
 
     contadorCarrito();
     guardarCarritoStorage(carritoDeCompras)
