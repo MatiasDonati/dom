@@ -84,28 +84,22 @@ const eliminarProducto = (productoId) => {
 
 const agregarProducto = (productoId) => {
 
-    // NO ME SUMA UN PRODCUTO, PERO SI ESCUCHA EL EVENTO !
-    // ACA DESESTRUCTURE UN OBJETO PARA ACCEDER A SUS PROPIEDADES !
-
-    const productoAEliminar = productos.find(producto => producto.id == productoId);
-    const { nombre, precio, cantidad } = productoAEliminar
-    console.log(nombre);
-    console.log(precio);
-    console.log(cantidad);
-    cantidad++
-    // productoAEliminar.cantidad++
+    let producto = productos.find(producto => producto.id == productoId);
+    let productoAAgregar = carritoDeCompras.find(producto => productoId == producto.id)
+    productoAAgregar.cantidad++
     guardarCarritoStorage(carritoDeCompras);
     pintarCarrito(carritoDeCompras);
 }
 
 const eliminarUno = (productoId) =>{
 
-    // NO ME ELIMINA UN PRODCUTO, PERO SI ESCUCHA EL EVENTO !
-
-    const productoAEliminar = productos.find(producto => producto.id == productoId);
-    if(productoAEliminar.cantidad > 1){
-        productoAEliminar.cantidad--
+    let producto = productos.find(producto => producto.id == productoId);
+    let productoEnArray = carritoDeCompras.find(producto => productoId == producto.id)
+    if(productoEnArray.cantidad > 1){
+        productoEnArray.cantidad--
     }
     guardarCarritoStorage(carritoDeCompras);
     pintarCarrito(carritoDeCompras);
 }
+
+console.log(...productos);
