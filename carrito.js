@@ -87,7 +87,9 @@ const agregarProducto = (productoId) => {
 
     let producto = productos.find(producto => producto.id == productoId);
     let productoAAgregar = carritoDeCompras.find(producto => productoId == producto.id)
-    productoAAgregar.cantidad++
+    // SPREAD OPERATOR PARA MODIFICAR PROPIEDAD
+    // productoAAgregar.cantidad++
+    let productoNuevo = { ...productoAAgregar, cantidad: productoAAgregar.cantidad++ }
     guardarCarritoStorage(carritoDeCompras);
     pintarCarrito(carritoDeCompras);
 }
@@ -97,7 +99,9 @@ const eliminarUno = (productoId) =>{
     let producto = productos.find(producto => producto.id == productoId);
     let productoAEliminar = carritoDeCompras.find(producto => productoId == producto.id)
     if(productoAEliminar.cantidad > 1){
-        productoAEliminar.cantidad--
+        // SPREAD OPERATOR PARA MODIFICAR PROPIEDAD
+        // productoAEliminar.cantidad--
+        let productoNuevo = { ...productoAEliminar, cantidad: productoAEliminar.cantidad-- }
     }
     guardarCarritoStorage(carritoDeCompras);
     pintarCarrito(carritoDeCompras);
