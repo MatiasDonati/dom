@@ -85,7 +85,6 @@ const eliminarProducto = (productoId) => {
 
 const agregarProducto = (productoId) => {
 
-    let producto = productos.find(producto => producto.id == productoId);
     let productoAAgregar = carritoDeCompras.find(producto => productoId == producto.id)
     // SPREAD OPERATOR PARA MODIFICAR PROPIEDAD
     // productoAAgregar.cantidad++
@@ -96,7 +95,6 @@ const agregarProducto = (productoId) => {
 
 const eliminarUno = (productoId) =>{
 
-    let producto = productos.find(producto => producto.id == productoId);
     let productoAEliminar = carritoDeCompras.find(producto => productoId == producto.id)
     if(productoAEliminar.cantidad > 1){
         // SPREAD OPERATOR PARA MODIFICAR PROPIEDAD
