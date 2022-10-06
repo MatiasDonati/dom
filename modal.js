@@ -23,5 +23,7 @@ modalCarrito.addEventListener('click', (e) =>{
 
 carritoContenedor.addEventListener('click', (e) => {
     e.stopPropagation();
-    eliminarProducto(e.target.parentNode.value);
+    if(e.target.parentNode.classList.contains('boton-eliminar')){
+        eliminarProducto(e.target.parentNode.value);
+    }
 });

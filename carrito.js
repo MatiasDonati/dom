@@ -10,6 +10,8 @@ const carrito = (productoId) => {
         carritoDeCompras = obtenerCarritoStorage()
     }
 
+    console.log(typeof(carritoDeCompras))
+
     let producto = productos.find( producto => producto.id == productoId);
 
     console.log(carritoDeCompras.includes(producto));
