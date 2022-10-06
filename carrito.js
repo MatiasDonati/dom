@@ -31,20 +31,6 @@ const carrito = (productoId) => {
         })
     }
     productosEnElCarritoModal()
-
-    // Boton Agregar un producto del carrito
-    const botonAgregar = document.getElementById(`agregar-uno${producto.id}`)
-    botonAgregar.addEventListener('click', (e)=>{
-        console.log(e.target.value);
-        console.log('Agregar Producto');
-    })
-
-    // Boton eliminarUno producto del carrito
-    const botonEliminarUno = document.getElementById(`eliminar-uno${producto.id}`)
-    botonEliminarUno.addEventListener('click', (e) =>{
-        console.log(e.target.value);
-        console.log('Eliminar un Producto');
-    })
 };
 
 // Contador del Carrito
@@ -92,6 +78,34 @@ const eliminarProducto = (productoId) => {
     const productoAEliminar = productos.find(producto => producto.id == productoId);
     let index = carritoDeCompras.indexOf(productoAEliminar);
     carritoDeCompras.splice(index, 1)
+    guardarCarritoStorage(carritoDeCompras);
+    pintarCarrito(carritoDeCompras);
+}
+
+const agregarProducto = (productoId) => {
+
+    // NO ME SUMA UN PRODCUTO, PERO SI ESCUCHA EL EVENTO !
+    // ACA DESESTRUCTURE UN OBJETO PARA ACCEDER A SUS PROPIEDADES !
+
+    const productoAEliminar = productos.find(producto => producto.id == productoId);
+    const { nombre, precio, cantidad } = productoAEliminar
+    console.log(nombre);
+    console.log(precio);
+    console.log(cantidad);
+    cantidad++
+    // productoAEliminar.cantidad++
+    guardarCarritoStorage(carritoDeCompras);
+    pintarCarrito(carritoDeCompras);
+}
+
+const eliminarUno = (productoId) =>{
+
+    // NO ME ELIMINA UN PRODCUTO, PERO SI ESCUCHA EL EVENTO !
+
+    const productoAEliminar = productos.find(producto => producto.id == productoId);
+    if(productoAEliminar.cantidad > 1){
+        productoAEliminar.cantidad--
+    }
     guardarCarritoStorage(carritoDeCompras);
     pintarCarrito(carritoDeCompras);
 }

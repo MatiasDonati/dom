@@ -26,4 +26,13 @@ carritoContenedor.addEventListener('click', (e) => {
     if(e.target.parentNode.classList.contains('boton-eliminar')){
         eliminarProducto(e.target.parentNode.value);
     }
+    else if (e.target.classList.contains('agregar-uno')){
+        console.log(`Agregar un producto value: ${e.target.value}`);
+
+        agregarProducto(e.target.value)
+    }
+    else if(e.target.classList.contains('eliminar-uno')){
+        console.log(`Eliminar un producto value: ${e.target.value}`);
+        eliminarUno(e.target.value)
+    }
 });
