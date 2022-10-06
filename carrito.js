@@ -2,28 +2,13 @@ let carritoDeCompras = [];
 
 const carrito = (productoId) => {
 
-    // Cuando aplico esto se me desactiva la entrada al else y no hace producto.cantidad++ sino q lo mete de nuevo al objeto entero
-
-    // Con IF Ternario
-    // localStorage.getItem('carrito') ? carritoDeCompras = obtenerCarritoStorage()
     if(localStorage.getItem('carrito')){
         carritoDeCompras = obtenerCarritoStorage()
     }
 
-    console.log(typeof(carritoDeCompras))
-
     let producto = productos.find( producto => producto.id == productoId);
-
-    console.log(carritoDeCompras.includes(producto));
-
-    // Con IF Ternario
-    carritoDeCompras.includes(producto) ? producto.cantidad++ : carritoDeCompras.push(producto);
-    // if(!carritoDeCompras.includes(producto)){
-    //     carritoDeCompras.push(producto);
-    // }else{
-    //     console.log('PRODUCTO CANTIDAD++');
-    //     producto.cantidad++
-    // }
+    const productoRepetido = carritoDeCompras.find(producto => producto.id == productoId)
+    productoRepetido ? productoRepetido.cantidad++ : carritoDeCompras.push(producto);
 
     contadorCarrito();
     guardarCarritoStorage(carritoDeCompras)
