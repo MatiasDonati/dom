@@ -34,13 +34,15 @@ const carrito = (productoId) => {
 
     // Boton Agregar un producto del carrito
     const botonAgregar = document.getElementById(`agregar-uno${producto.id}`)
-    botonAgregar.addEventListener('click', ()=>{
+    botonAgregar.addEventListener('click', (e)=>{
+        console.log(e.target.value);
         console.log('Agregar Producto');
     })
 
     // Boton eliminarUno producto del carrito
     const botonEliminarUno = document.getElementById(`eliminar-uno${producto.id}`)
-    botonEliminarUno.addEventListener('click', () =>{
+    botonEliminarUno.addEventListener('click', (e) =>{
+        console.log(e.target.value);
         console.log('Eliminar un Producto');
     })
 };
