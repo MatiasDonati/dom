@@ -5,7 +5,7 @@ const productos = [
         nombre:'Akai LPK25',
         desc:'Controlador Midi',
         precio:9000,
-        img:'src/img/Akai LPK25.webp',
+        img:'src/img/1.webp',
         cantidad:1
     },
     {
@@ -13,7 +13,7 @@ const productos = [
         nombre:'Arturia KeyLab 49 Mkii',
         desc:'Controlador Midi',
         precio:1500,
-        img:'src/img/Arturia Key Lab 49 mkii.webp',
+        img:'src/img/2.webp',
         cantidad:1
     },
     {
@@ -21,7 +21,7 @@ const productos = [
         nombre:'Arturia Key Lab 61',
         desc:'Controlador Midi',
         precio:2000,
-        img:'src/img/Arturia Key Lab 61.webp',
+        img:'src/img/3.webp',
         cantidad:1
     },
     {
@@ -29,7 +29,7 @@ const productos = [
         nombre:'Minilab Edicion Especial',
         desc:'Controlador Midi',
         precio:2000,
-        img:'src/img/Minilab Edicion Especial.webp',
+        img:'src/img/4.webp',
         cantidad:1
     },
     {
@@ -37,7 +37,7 @@ const productos = [
         nombre:'MiniLab',
         desc:'Controlador Midi',
         precio:3000,
-        img:'src/img/MinilLab.webp',
+        img:'src/img/5.webp',
         cantidad:1
     },
     {
@@ -45,7 +45,7 @@ const productos = [
         nombre:'MPK mini',
         desc:'Controlador Midi',
         precio:3000,
-        img:'src/img/MPKmini.webp',
+        img:'src/img/6.webp',
         cantidad:1
     }
 ];

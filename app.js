@@ -22,6 +22,33 @@ const mostrarProductos = () => {
 
         const boton = document.getElementById(`boton${id}`);
         boton.addEventListener('click', ()=>{
+            Swal.fire({
+                icon: 'success',
+                title: 'Dale dalee!',
+                text: 'Ya es tuyo tirri !',
+                // position: 'top-end',
+                showConfirmButton: false,
+                timer: 2000,
+                imageUrl: `src/img/${id}.webp`,
+                imageWidth: 300,
+                imageHeight: 150,
+                imageAlt: 'Custom image',
+            });
+            Toastify({
+                text: 'Producto agregado al Carrito!',
+                duration: 3000
+            }).showToast();
+            Toastify({
+                text: `${nombre}`,
+                duration: 3000,
+                position: 'left',
+                gravity: 'bottom',
+                style: {
+                    background: 'linear-gradient(to right, #00b09b, #96c92d)'
+                },
+                // destination:'https://www.google.com.ar/',
+                newWindow: true,
+            }).showToast();
         carrito(id)
         })
     })

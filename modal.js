@@ -24,6 +24,25 @@ modalCarrito.addEventListener('click', (e) =>{
 carritoContenedor.addEventListener('click', (e) => {
     e.stopPropagation();
     if(e.target.parentNode.classList.contains('boton-eliminar')){
+        Swal.fire({
+            title: 'Esta seguro?!',
+            text: 'Va a eliminar el producto',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result)=>{
+            if(result.isConfirmed){
+                Swal.fire(
+                    // Eliminar Producto!
+                    'Eliminado ea ea ea .. compralo cagón!',
+                    'El producto se elimino paaa',
+                    'success'
+                )
+            }
+        })
         eliminarProducto(e.target.parentNode.value);
     }
     else if (e.target.classList.contains('agregar-uno')){
