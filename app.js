@@ -2,7 +2,7 @@ const mostrarProductos = () => {
 
     const etiquetaTitulo = document.getElementById('titulo')
     etiquetaTitulo.innerHTML = `<h2>....${nombreSeccion}</h2>`
-
+    
     const contenedorProductos = document.getElementById('producto-contenedor')
     productos.forEach(producto => {
         // DESESTRUCTURACION DE OBJETO
