@@ -1,7 +1,7 @@
-const mostrarProductos = () => {
+const etiquetaTitulo = document.getElementById('titulo')
+etiquetaTitulo.innerHTML = `<h2>...${nombreSeccion}</h2>`
 
-    const etiquetaTitulo = document.getElementById('titulo')
-    etiquetaTitulo.innerHTML = `<h2>....${nombreSeccion}</h2>`
+const mostrarProductos = () => {
     
     const contenedorProductos = document.getElementById('producto-contenedor')
     productos.forEach(producto => {
@@ -19,8 +19,12 @@ const mostrarProductos = () => {
                             </div>
                         </div>`
         contenedorProductos.appendChild(div)
+        botonComprar(producto)
+    })
+};
 
-        const boton = document.getElementById(`boton${id}`);
+const botonComprar = ({id, nombre}) => {
+    const boton = document.getElementById(`boton${id}`);
         boton.addEventListener('click', ()=>{
             Swal.fire({
                 icon: 'success',
@@ -51,6 +55,4 @@ const mostrarProductos = () => {
             }).showToast();
         carrito(id)
         })
-    })
-};
-// mostrarProductos()
+}

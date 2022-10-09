@@ -7,9 +7,10 @@ const carrito = (productoId) => {
     }
 
     let producto = productos.find( producto => producto.id == productoId);
-    const productoRepetido = carritoDeCompras.find(producto => producto.id == productoId)
+    let productoRepetido = carritoDeCompras.find(producto => producto.id == productoId)
     // IF TERNARIO
     productoRepetido ? productoRepetido.cantidad++ : carritoDeCompras.push(producto);
+
 
     contadorCarrito();
     guardarCarritoStorage(carritoDeCompras)

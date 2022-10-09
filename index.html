@@ -18,10 +18,15 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!-- CDN luxon -->
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
-    <title>Productos</title>
+    <title>Teclados</title>
 </head>
 <body>
     <header>
+        <ul class="nav justify-content-start">
+            <li class="nav-item">
+                <button class="nav-link text-body " id="home" href="#">Home
+            </li>
+        </ul>
         <div class="titulo" id="titulo">
         </div>
         <nav>
@@ -42,8 +47,6 @@
         </nav>
     </header>
 
-<main id="producto-contenedor">
-
     <div class="modal-container" id="modal_container">
         <div class="modal-carrito">
                 <h3>Carrito</h3>
@@ -53,6 +56,8 @@
             <p id="precio-total"></p>
             </div>
     </div>
+<main id="producto-contenedor">
+
 
 </main>
 
@@ -65,6 +70,7 @@
 <script src="verProductoMasCaro.js" ></script>
 <script src="productoMenorAMayor.js" ></script>
 <script src="otraCosa.js" ></script>
+<script src="home.js" ></script>
 
 </body>
 </html>

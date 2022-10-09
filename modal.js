@@ -7,6 +7,7 @@ const carritoContenedor = document.getElementById('carrito-contenedor');
 
 abrirCarrito.addEventListener('click', ()=> {
     modalContenedor.classList.toggle('modal-active')
+    console.log("modal activado !");
 });
 
 cerrarCarrito.addEventListener('click', ()=> {
@@ -34,6 +35,7 @@ carritoContenedor.addEventListener('click', (e) => {
             confirmButtonText: 'Eliminar',
             cancelButtonText: 'Cancelar'
         }).then((result)=>{
+            console.log(result.isConfirmed);
             if(result.isConfirmed){
                 Swal.fire(
                     // Eliminar Producto!
@@ -41,13 +43,12 @@ carritoContenedor.addEventListener('click', (e) => {
                     'El producto se elimino paaa',
                     'success'
                 )
+                eliminarProducto(e.target.parentNode.value);
             }
         })
-        eliminarProducto(e.target.parentNode.value);
     }
     else if (e.target.classList.contains('agregar-uno')){
         console.log(`Agregar un producto value: ${e.target.value}`);
-
         agregarProducto(e.target.value)
     }
     else if(e.target.classList.contains('eliminar-uno')){
