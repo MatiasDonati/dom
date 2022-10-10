@@ -11,7 +11,6 @@ const carrito = (productoId) => {
     // IF TERNARIO
     productoRepetido ? productoRepetido.cantidad++ : carritoDeCompras.push(producto);
 
-
     contadorCarrito();
     guardarCarritoStorage(carritoDeCompras)
 
@@ -45,7 +44,6 @@ const contadorCarrito = () => {
     let total = carritoDeCompras.reduce((acc,item)=>acc + item.precio * item.cantidad,0);
     const precioTotal = document.getElementById('precio-total')
     precioTotal.innerHTML = `Total: $${total}`
-
 };
 
 // pintarCarrito recibe por parametro un array de objetos
@@ -105,17 +103,3 @@ const eliminarUno = (productoId) =>{
     guardarCarritoStorage(carritoDeCompras);
     pintarCarrito(carritoDeCompras);
 }
-
-// // SPREAD OPERATOR
-
-// HACER ALGUNA FUNCION Q SIRVA PARA ALGO DONDE TENGA Q UNIR DOS ARRAYS PARA PODER USAR EL SPREAD!
-// POR EJ PODRIA DIVIDIR EL STOCK EN DOS CATEGORIAS Y AL MOSTRAR TODAS UNIRLAS MEDIANDO SPREAD..
-
-// console.log(...productos);
-// const [a, b] = productos
-// console.log(a);
-// console.log(b);
-// arraySpread = [1, 6, 8, 345, 87, 1567, -4, 6456];
-// numeroMayor = Math.max(...arraySpread)
-// console.log(numeroMayor);
-

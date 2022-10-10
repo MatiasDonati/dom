@@ -2,7 +2,7 @@ const etiquetaTitulo = document.getElementById('titulo')
 etiquetaTitulo.innerHTML = `<h2>...${nombreSeccion}</h2>`
 
 const mostrarProductos = () => {
-    
+
     const contenedorProductos = document.getElementById('producto-contenedor')
     productos.forEach(producto => {
         // DESESTRUCTURACION DE OBJETO
@@ -28,8 +28,8 @@ const botonComprar = ({id, nombre}) => {
         boton.addEventListener('click', ()=>{
             Swal.fire({
                 icon: 'success',
-                title: 'Dale dalee!',
-                text: 'Ya es tuyo tirri !',
+                title: `Felicitaciones!`,
+                text: 'Ya casi es tuyo.',
                 // position: 'top-end',
                 showConfirmButton: false,
                 timer: 2000,
@@ -37,11 +37,12 @@ const botonComprar = ({id, nombre}) => {
                 imageWidth: 300,
                 imageHeight: 150,
                 imageAlt: 'Custom image',
+                duration: 1000
             });
-            Toastify({
-                text: 'Producto agregado al Carrito!',
-                duration: 3000
-            }).showToast();
+            // Toastify({
+            //     text: 'Producto agregado al Carrito!',
+            //     duration: 3000
+            // }).showToast();
             Toastify({
                 text: `${nombre}`,
                 duration: 3000,

@@ -39,8 +39,8 @@ carritoContenedor.addEventListener('click', (e) => {
             if(result.isConfirmed){
                 Swal.fire(
                     // Eliminar Producto!
-                    'Eliminado ea ea ea .. compralo cagón!',
-                    'El producto se elimino paaa',
+                    'Eliminado!',
+                    'El producto se elimino de su compra.',
                     'success'
                 )
                 eliminarProducto(e.target.parentNode.value);
