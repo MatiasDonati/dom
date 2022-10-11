@@ -37,7 +37,6 @@ carritoContenedor.addEventListener('click', (e) => {
             console.log(result.isConfirmed);
             if(result.isConfirmed){
                 Swal.fire(
-                    // Eliminar Producto!
                     'Eliminado!',
                     'El producto se elimino de su compra.',
                     'success'
@@ -61,15 +60,19 @@ carritoContenedor.addEventListener('click', (e) => {
     }
     else if(e.target.classList.contains('eliminar-uno')){
         console.log(`Eliminar un producto value: ${e.target.value}`);
-        Toastify({
-            text: `Eliminaste un producto`,
-            duration: 3000,
-            position: 'left',
-            gravity: 'bottom',
-            style: {
-                background: 'linear-gradient(to right, #00b09b, #96c92d)'
-            }
-        }).showToast();
-        eliminarUno(e.target.value)
+        let producto = carritoDeCompras.find(producto => producto.id == e.target.value)
+        let { cantidad } = producto
+        if(cantidad != 1) {
+            Toastify({
+                text: `Eliminaste un producto`,
+                duration: 3000,
+                position: 'left',
+                gravity: 'bottom',
+                style: {
+                    background: 'linear-gradient(to right, #00b09b, #96c92d)'
+                }
+            }).showToast();
+            eliminarUno(e.target.value)
+        }
     }
 });
