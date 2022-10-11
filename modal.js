@@ -4,7 +4,6 @@ const cerrarCarrito = document.getElementById('cerrar')
 const modalCarrito = document.querySelector('.modal-carrito')
 const carritoContenedor = document.getElementById('carrito-contenedor');
 
-
 abrirCarrito.addEventListener('click', ()=> {
     modalContenedor.classList.toggle('modal-active')
     console.log("modal activado !");
@@ -49,10 +48,28 @@ carritoContenedor.addEventListener('click', (e) => {
     }
     else if (e.target.classList.contains('agregar-uno')){
         console.log(`Agregar un producto value: ${e.target.value}`);
+        Toastify({
+            text: `Agregaste un producto`,
+            duration: 3000,
+            position: 'left',
+            gravity: 'bottom',
+            style: {
+                background: 'linear-gradient(to right, #00b09b, #96c92d)'
+            }
+        }).showToast();
         agregarProducto(e.target.value)
     }
     else if(e.target.classList.contains('eliminar-uno')){
         console.log(`Eliminar un producto value: ${e.target.value}`);
+        Toastify({
+            text: `Eliminaste un producto`,
+            duration: 3000,
+            position: 'left',
+            gravity: 'bottom',
+            style: {
+                background: 'linear-gradient(to right, #00b09b, #96c92d)'
+            }
+        }).showToast();
         eliminarUno(e.target.value)
     }
 });
