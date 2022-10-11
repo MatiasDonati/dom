@@ -13,6 +13,5 @@ const ordenarMasCaro = () =>{
         }
     )
     contenedorProductos.innerHTML=""
-
     mostrarProductos()
 }

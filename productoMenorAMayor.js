@@ -16,6 +16,5 @@ const ordenarMasBarato = () =>{
         }
     )
     contenedorProductos.innerHTML=""
-
     mostrarProductos()
 }
