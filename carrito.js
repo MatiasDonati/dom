@@ -39,7 +39,9 @@ const contadorCarrito = () => {
 
     let contadorCarrito = carritoDeCompras.reduce((acc,item)=>acc + item.cantidad,0);
     const contador = document.getElementById('contador-carrito')
-    contador.innerHTML = `${contadorCarrito}`
+    if (contadorCarrito >= 1) {
+        contador.innerHTML = `${contadorCarrito}`
+    }
 
     let total = carritoDeCompras.reduce((acc,item)=>acc + item.precio * item.cantidad,0);
     const precioTotal = document.getElementById('precio-total')

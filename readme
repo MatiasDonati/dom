@@ -1,4 +1,11 @@
 COSAS A HACER:
 
+Finalizar la venta.
+
+Al ternimar la venta captar el evento de click y un modal de SweetAler para Nombre (datos del cliente), y Tarjeta de Crédito.
+Al terminar actualizar el sitio (f5) "location.reload()" o bien vaciar el carrito al terminar la compra (menos exigente para todo supongo)
+
+Hacer um link q redirija a WhatsApp a través de https://walink.co/
+
 En el Storage no funcionan los botones de agregra y eliminar UN producto en el modal.
-En el Storage cuando tengo mas de un producto, y elimino uno en el modal, se eliminan todos.
+En el Storage cuando tengo mas de un producto, y elimino uno en el modal, se eliminan todos. Pero cuando agrego uno nuevo se acomoda todo.

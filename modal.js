@@ -3,6 +3,7 @@ const abrirCarrito = document.getElementById('open')
 const cerrarCarrito = document.getElementById('cerrar')
 const modalCarrito = document.querySelector('.modal-carrito')
 const carritoContenedor = document.getElementById('carrito-contenedor');
+const comprar = document.getElementById('compra-final')
 
 abrirCarrito.addEventListener('click', ()=> {
     modalContenedor.classList.toggle('modal-active')
@@ -76,3 +77,27 @@ carritoContenedor.addEventListener('click', (e) => {
         }
     }
 });
+
+comprar.addEventListener('click', ()=>{
+    console.log('Comprar Modal!');
+
+    //multiples inputs con Swet Alert
+    //PEDIR NOMBRE Y TARJETA ! VALIDAR TARJETA 16 NUMEROS Y CODIGO DE SEGURIDAD.
+    Swal.fire({
+        title: 'Desea realizar la compra?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Si',
+        denyButtonText: `Todavía no`,
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            Swal.fire('Su compra fue realizada con éxito!', '', 'success')
+            carritoDeCompras=[]
+            guardarCarritoStorage(carritoDeCompras);
+            pintarCarrito(carritoDeCompras);
+        } else if (result.isDenied) {
+             Swal.fire('Su compra no fue realizada', '', 'error')
+        }
+      })
+})
