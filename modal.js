@@ -80,11 +80,11 @@ carritoContenedor.addEventListener('click', (e) => {
 
 comprar.addEventListener('click', ()=>{
     console.log('Comprar Modal!');
-
+    totalPreciosStorage = carritoDeCompras.reduce((acc,item)=>acc + item.precio * item.cantidad,0)
     //multiples inputs con Swet Alert
     //PEDIR NOMBRE Y TARJETA ! VALIDAR TARJETA 16 NUMEROS Y CODIGO DE SEGURIDAD.
     Swal.fire({
-        title: 'Desea realizar la compra?',
+        title: `Desea realizar la compra?\n$${totalPreciosStorage}`,
         showDenyButton: true,
         showCancelButton: true,
         confirmButtonText: 'Si',

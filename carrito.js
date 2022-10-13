@@ -74,6 +74,7 @@ const pintarCarrito = (carrito) => {
             totalPreciosStorage = carrito.reduce((acc,item)=>acc + item.precio * item.cantidad,0)
             const precioTotal = document.getElementById('precio-total')
             precioTotal.innerHTML = `Total: $${totalPreciosStorage}`
+            
 }
 
 const eliminarProducto = (productoId) => {
