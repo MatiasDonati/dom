@@ -78,6 +78,12 @@ carritoContenedor.addEventListener('click', (e) => {
     }
 });
 
+let nombreUsuario;
+
+const nombre = (nombre) => {
+    nombreUsuario = nombre
+}
+
 comprar.addEventListener('click', ()=>{
     console.log('Comprar Modal!');
     if(carritoDeCompras.length>0){
@@ -87,20 +93,30 @@ comprar.addEventListener('click', ()=>{
         Swal.fire({
             title: `Desea realizar la compra?\n$${totalPreciosStorage}`,
             showDenyButton: true,
-            showCancelButton: true,
+            // showCancelButton: true,
             confirmButtonText: 'Si',
             denyButtonText: `Todavía no`,
           }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'Ingrese su Nombre',
+                    input: 'text',
+                    inputLabel: 'Ingrese su nombre por favor',
+                    inputPlaceholder: 'Ingrese su nombre',
+                    showCancelButton: false,
+                    }).then((result) => {
+                        nombre(result.value)
+                        Swal.fire(`"${nombreUsuario}"\nSu compra fue realizada con éxito!`, '', 'success')
+                        carritoDeCompras=[]
+                        guardarCarritoStorage(carritoDeCompras);
+                        pintarCarrito(carritoDeCompras);
+                    })
                 // Aca poner input con nombre y tarjeta de credito ! captar los datos con .then() como esta en la bienvenida.js
-                Swal.fire('Su compra fue realizada con éxito!', '', 'success')
-                carritoDeCompras=[]
-                guardarCarritoStorage(carritoDeCompras);
-                pintarCarrito(carritoDeCompras);
-            } else if (result.isDenied) {
-                 Swal.fire('Su compra no fue realizada.', '', 'error')
+               
             }
           })
+    }else{
+        Swal.fire('Debera seleccionar un producto.', '', 'error')
     }
 })
