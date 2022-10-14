@@ -41,6 +41,8 @@ const contadorCarrito = () => {
     const contador = document.getElementById('contador-carrito')
     if (contadorCarrito >= 1) {
         contador.innerHTML = `${contadorCarrito}`
+    }else{
+        contador.innerHTML = ''
     }
 
     let total = carritoDeCompras.reduce((acc,item)=>acc + item.precio * item.cantidad,0);
@@ -69,7 +71,11 @@ const pintarCarrito = (carrito) => {
             // PARA QUE SUME TOTAL Y CONTADOR DE STORAGE
             contadorStorage = carrito.reduce((acc,item)=>acc + item.cantidad,0)
             const contador = document.getElementById('contador-carrito')
-            contador.innerHTML = `${contadorStorage}`
+            if(contadorStorage >= 1){
+                contador.innerHTML = `${contadorStorage}`
+            }else{
+                contador.innerHTML = ''
+            }
 
             totalPreciosStorage = carrito.reduce((acc,item)=>acc + item.precio * item.cantidad,0)
             const precioTotal = document.getElementById('precio-total')
