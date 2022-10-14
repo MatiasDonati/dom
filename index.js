@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', ()=>{
     mostrarProductos();
-    //bienvenida()
+    bienvenida()
 
     if(localStorage.getItem('carrito')){
         const carrito = obtenerCarritoStorage();

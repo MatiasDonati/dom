@@ -80,24 +80,27 @@ carritoContenedor.addEventListener('click', (e) => {
 
 comprar.addEventListener('click', ()=>{
     console.log('Comprar Modal!');
-    totalPreciosStorage = carritoDeCompras.reduce((acc,item)=>acc + item.precio * item.cantidad,0)
-    //multiples inputs con Swet Alert
-    //PEDIR NOMBRE Y TARJETA ! VALIDAR TARJETA 16 NUMEROS Y CODIGO DE SEGURIDAD.
-    Swal.fire({
-        title: `Desea realizar la compra?\n$${totalPreciosStorage}`,
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: 'Si',
-        denyButtonText: `Todavía no`,
-      }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-            Swal.fire('Su compra fue realizada con éxito!', '', 'success')
-            carritoDeCompras=[]
-            guardarCarritoStorage(carritoDeCompras);
-            pintarCarrito(carritoDeCompras);
-        } else if (result.isDenied) {
-             Swal.fire('Su compra no fue realizada', '', 'error')
-        }
-      })
+    if(carritoDeCompras.length>0){
+        totalPreciosStorage = carritoDeCompras.reduce((acc,item)=>acc + item.precio * item.cantidad,0)
+        //multiples inputs con Swet Alert
+        //PEDIR NOMBRE Y TARJETA ! VALIDAR TARJETA 16 NUMEROS Y CODIGO DE SEGURIDAD.
+        Swal.fire({
+            title: `Desea realizar la compra?\n$${totalPreciosStorage}`,
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Si',
+            denyButtonText: `Todavía no`,
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                // Aca poner input con nombre y tarjeta de credito ! captar los datos con .then() como esta en la bienvenida.js
+                Swal.fire('Su compra fue realizada con éxito!', '', 'success')
+                carritoDeCompras=[]
+                guardarCarritoStorage(carritoDeCompras);
+                pintarCarrito(carritoDeCompras);
+            } else if (result.isDenied) {
+                 Swal.fire('Su compra no fue realizada.', '', 'error')
+            }
+          })
+    }
 })
