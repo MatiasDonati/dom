@@ -88,8 +88,6 @@ comprar.addEventListener('click', ()=>{
     console.log('Comprar Modal!');
     if(carritoDeCompras.length>0){
         totalPreciosStorage = carritoDeCompras.reduce((acc,item)=>acc + item.precio * item.cantidad,0)
-        //multiples inputs con Swet Alert
-        //PEDIR NOMBRE Y TARJETA ! VALIDAR TARJETA 16 NUMEROS Y CODIGO DE SEGURIDAD.
         Swal.fire({
             title: `Desea realizar la compra?\n$${totalPreciosStorage}`,
             showDenyButton: true,
@@ -99,6 +97,7 @@ comprar.addEventListener('click', ()=>{
           }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
+                // Aca meter un Multiple Input !
                 Swal.fire({
                     title: 'Ingrese su Nombre',
                     input: 'text',
@@ -112,8 +111,6 @@ comprar.addEventListener('click', ()=>{
                         guardarCarritoStorage(carritoDeCompras);
                         pintarCarrito(carritoDeCompras);
                     })
-                // Aca poner input con nombre y tarjeta de credito ! captar los datos con .then() como esta en la bienvenida.js
-               
             }
           })
     }else{
