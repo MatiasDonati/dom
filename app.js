@@ -7,6 +7,11 @@ const mostrarProductos = async () => {
 
     const productos = await obtenerProductos()
 
+    pintarProductosEnElDom(productos)
+
+};
+
+const pintarProductosEnElDom = (productos) => {
     productos.forEach(producto => {
         // DESESTRUCTURACION DE OBJETO
         const { img, nombre, desc, precio, id } = producto
@@ -24,7 +29,7 @@ const mostrarProductos = async () => {
         contenedorProductos.appendChild(div)
         botonComprar(producto)
     })
-};
+}
 
 const botonComprar = ({id, nombre}) => {
     const boton = document.getElementById(`boton${id}`);

@@ -17,6 +17,7 @@ const ordenarMasBarato = async () =>{
             return a.precio - b.precio
         }
     )
+    console.log(carritoDeCompras);
     contenedorProductos.innerHTML=""
-    mostrarProductos()
+    pintarProductosEnElDom(productos)
 }
