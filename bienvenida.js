@@ -14,7 +14,7 @@ const bienvenida = () => {
 }
 
 const email = (email) => {
-    nombreUsuario = email
+    emailUsuario = email
 }
 
 

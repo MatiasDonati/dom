@@ -82,16 +82,14 @@ const pintarCarrito = (carrito) => {
             totalPreciosStorage = carrito.reduce((acc,item)=>acc + item.precio * item.cantidad,0)
             const precioTotal = document.getElementById('precio-total')
             precioTotal.innerHTML = `Total: $${totalPreciosStorage}`
-            
 }
 
 const eliminarProducto = (productoId) => {
-    const productoAEliminar = productos.find(producto => producto.id == productoId);
+    const productoAEliminar = carritoDeCompras.find(producto => producto.id == productoId);
     let index = carritoDeCompras.indexOf(productoAEliminar);
     carritoDeCompras.splice(index, 1)
     guardarCarritoStorage(carritoDeCompras);
     pintarCarrito(carritoDeCompras);
-    console.log(carritoDeCompras);
 }
 
 const agregarProducto = (productoId) => {
