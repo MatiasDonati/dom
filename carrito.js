@@ -1,6 +1,8 @@
 let carritoDeCompras = [];
 
-const carrito = (productoId) => {
+const carrito = async (productoId) => {
+
+    const productos = await obtenerProductos()
 
     if(localStorage.getItem('carrito')){
         carritoDeCompras = obtenerCarritoStorage()
@@ -89,6 +91,7 @@ const eliminarProducto = (productoId) => {
     carritoDeCompras.splice(index, 1)
     guardarCarritoStorage(carritoDeCompras);
     pintarCarrito(carritoDeCompras);
+    console.log(carritoDeCompras);
 }
 
 const agregarProducto = (productoId) => {

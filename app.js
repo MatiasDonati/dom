@@ -1,9 +1,12 @@
 const etiquetaTitulo = document.getElementById('titulo')
 etiquetaTitulo.innerHTML = `<h2>...${nombreSeccion}</h2>`
 
-const mostrarProductos = () => {
+const mostrarProductos = async () => {
 
     const contenedorProductos = document.getElementById('producto-contenedor')
+
+    const productos = await obtenerProductos()
+
     productos.forEach(producto => {
         // DESESTRUCTURACION DE OBJETO
         const { img, nombre, desc, precio, id } = producto
