@@ -13,6 +13,8 @@ const bienvenida = () => {
     }, 1000);
 }
 
+let emailUsuario;
+
 const email = (email) => {
     emailUsuario = email
 }

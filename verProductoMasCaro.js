@@ -13,7 +13,6 @@ const ordenarMasCaro = async () =>{
             return b.precio - a.precio
         }
     )
-    console.log(productos);
     contenedorProductos.innerHTML=""
     pintarProductosEnElDom(productos)
 }

@@ -10,6 +10,3 @@ const obtenerProductos = async () => {
     };
 };
 
-// Dnde pinto los productos llamo a esta funcion dentro de una variable llamada productos asi me queda igual q los otros
-// y a la funcion gral le pongo async y a la otra await ... ver ejemplo del shopping
-

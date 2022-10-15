@@ -1,14 +1,12 @@
 const etiquetaTitulo = document.getElementById('titulo')
+const nombreSeccion = 'Controladores Midi'
 etiquetaTitulo.innerHTML = `<h2>...${nombreSeccion}</h2>`
 
 const mostrarProductos = async () => {
 
     const contenedorProductos = document.getElementById('producto-contenedor')
-
     const productos = await obtenerProductos()
-
     pintarProductosEnElDom(productos)
-
 };
 
 const pintarProductosEnElDom = (productos) => {

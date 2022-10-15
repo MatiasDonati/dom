@@ -94,26 +94,27 @@ comprar.addEventListener('click', ()=>{
             // showCancelButton: true,
             confirmButtonText: 'Si',
             denyButtonText: `Todavía no`,
-          }).then((result) => {
+            }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
-            if (result.isConfirmed) {
+                if (result.isConfirmed) {
                 // Aca meter un Multiple Input !
-                Swal.fire({
-                    title: 'Ingrese su Nombre',
-                    input: 'text',
-                    inputLabel: 'Ingrese su nombre por favor',
-                    inputPlaceholder: 'Ingrese su nombre',
-                    showCancelButton: false,
-                    }).then((result) => {
-                        nombre(result.value)
-                        Swal.fire(`"${nombreUsuario}"\nSu compra fue realizada con éxito!`, '', 'success')
-                        carritoDeCompras=[]
-                        guardarCarritoStorage(carritoDeCompras);
-                        pintarCarrito(carritoDeCompras);
+                    Swal.fire({
+                        title: 'Ingrese su Nombre',
+                        input: 'text',
+                        inputLabel: 'Ingrese su nombre por favor',
+                        inputPlaceholder: 'Ingrese su nombre',
+                        showCancelButton: false,
+                        }).then((result) => {
+                            nombre(result.value)
+                            emailUsuario==undefined ? Swal.fire(`<p>${nombreUsuario}</p>\nSu compra fue realizada con éxito!`, '', 'success') : Swal.fire(`<p>${nombreUsuario}\nCorreo: ${emailUsuario}</p>\nSu compra fue realizada con éxito!`, '', 'success')
+                            carritoDeCompras=[]
+                            guardarCarritoStorage(carritoDeCompras);
+                            pintarCarrito(carritoDeCompras);
+                            })
+                        }
                     })
+                }else{
+                    Swal.fire('Debera seleccionar un producto.', '', 'error')
             }
-          })
-    }else{
-        Swal.fire('Debera seleccionar un producto.', '', 'error')
     }
-})
+);

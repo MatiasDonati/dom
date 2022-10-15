@@ -13,7 +13,6 @@ const ordenarPorId = async () =>{
             return a.id - b.id
         }
     )
-    console.log(productos);
     contenedorProductos.innerHTML=""
     pintarProductosEnElDom(productos)
 }

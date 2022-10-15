@@ -1,7 +1,5 @@
 const menorAMayor = document.getElementById('mas-barato')
 const contenedorProductos = document.getElementById('producto-contenedor')
-
-
 const cards = document.getElementsByClassName('card')
 
 menorAMayor.addEventListener('click', ()=>{
@@ -17,7 +15,6 @@ const ordenarMasBarato = async () =>{
             return a.precio - b.precio
         }
     )
-    console.log(carritoDeCompras);
     contenedorProductos.innerHTML=""
     pintarProductosEnElDom(productos)
 }

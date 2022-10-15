@@ -1,14 +1,9 @@
 COSAS A HACER:
 
-Finalizar la venta.
-
-Al ternimar la venta captar el evento de click y un modal de SweetAler para Nombre (datos del cliente), y Tarjeta de Crédito.
+Tarjeta de Crédito para finalizar la compra.
 
 Hacer um link q redirija a WhatsApp a través de https://walink.co/
-Formulario para mail quiza !
+Formulario para mail visto en after class quiza.
 
-En el Storage no funcionan los botones de agregra y eliminar UN producto en el modal.
-En el Storage cuando tengo mas de un producto, y elimino uno en el modal, se eliminan todos. Pero cuando agrego uno nuevo se acomoda todo.
-
-
-Falta acomodar vista de productos mas caro, mas barato y home ... por el cambio al usar Fetch.
+Arreglar el css del modal que se rompe un poco cuando hay muchos productos.
+Darle un poco de estilo.
