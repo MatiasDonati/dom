@@ -5,6 +5,7 @@ const modalCarrito = document.querySelector('.modal-carrito')
 const carritoContenedor = document.getElementById('carrito-contenedor');
 const comprar = document.getElementById('compra-final')
 
+
 abrirCarrito.addEventListener('click', ()=> {
     modalContenedor.classList.toggle('modal-active')
     console.log("modal activado !");
@@ -89,7 +90,7 @@ comprar.addEventListener('click', ()=>{
     if(carritoDeCompras.length>0){
         totalPreciosStorage = carritoDeCompras.reduce((acc,item)=>acc + item.precio * item.cantidad,0)
         Swal.fire({
-            title: `Desea realizar la compra?\n$${totalPreciosStorage}`,
+            title: `Desea realizar la compra por un total de: $${totalPreciosStorage}?`,
             showDenyButton: true,
             // showCancelButton: true,
             confirmButtonText: 'Si',

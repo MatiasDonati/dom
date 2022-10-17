@@ -27,7 +27,7 @@
     "id": 4,
     "nombre": "Minilab Edicion Especial",
     "desc": "Controlador Midi",
-    "precio": 2000,
+    "precio": 2100,
     "img": "src/img/4.webp",
     "cantidad": 1
   },
@@ -43,7 +43,7 @@
     "id": 6,
     "nombre": "MPK mini",
     "desc": "Controlador Midi",
-    "precio": 3000,
+    "precio": 3500,
     "img": "src/img/6.webp",
     "cantidad": 1
   }
