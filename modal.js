@@ -49,8 +49,9 @@ carritoContenedor.addEventListener('click', (e) => {
     }
     else if (e.target.classList.contains('agregar-uno')){
         console.log(`Agregar un producto value: ${e.target.value}`);
+        let producto = carritoDeCompras.find(producto => producto.id == e.target.value)
         Toastify({
-            text: `Agregaste un producto`,
+            text: `Agregaste un ${producto.nombre}`,
             duration: 3000,
             position: 'left',
             gravity: 'bottom',
@@ -66,7 +67,7 @@ carritoContenedor.addEventListener('click', (e) => {
         let { cantidad } = producto
         if(cantidad != 1) {
             Toastify({
-                text: `Eliminaste un producto`,
+                text: `Eliminaste un ${producto.nombre}`,
                 duration: 3000,
                 position: 'left',
                 gravity: 'bottom',
