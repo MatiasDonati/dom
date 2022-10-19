@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     bienvenida()
 
     if(localStorage.getItem('carrito')){
-        const carrito = obtenerCarritoStorage();
-        pintarCarrito(carrito)
+        carritoDeCompras = obtenerCarritoStorage()
+        pintarCarrito(carritoDeCompras)
     }
 })
