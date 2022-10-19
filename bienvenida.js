@@ -9,16 +9,17 @@ const bienvenida = () => {
             }).then((result) => {
                 console.log(result.value);
                 email(result.value)
+                if(result.value!=undefined){
+                    guardarEmail(emailUsuario)
+                }
             })
     }, 1000);
 }
 
-let emailUsuario;
+let emailUsuario = {};
 
 const email = (email) => {
-    emailUsuario = email
+    emailUsuario = {
+        email: email,
+    }
 }
-
-
-
-

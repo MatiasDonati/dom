@@ -108,7 +108,7 @@ comprar.addEventListener('click', ()=>{
                         showCancelButton: false,
                         }).then((result) => {
                             nombre(result.value)
-                            emailUsuario==undefined ? Swal.fire(`<p>${nombreUsuario}</p>\nSu compra fue realizada con éxito!`, '', 'success') : Swal.fire(`<p>${nombreUsuario}\nCorreo: ${emailUsuario}</p>\nSu compra fue realizada con éxito!`, '', 'success')
+                            emailUsuario==undefined ? Swal.fire(`<p>${nombreUsuario}</p>\nSu compra fue realizada con éxito!`, '', 'success') : Swal.fire(`<p>${nombreUsuario}\nCorreo: ${emailUsuario.email}</p>\nSu compra fue realizada con éxito!`, '', 'success')
                             carritoDeCompras=[]
                             guardarCarritoStorage(carritoDeCompras);
                             pintarCarrito(carritoDeCompras);

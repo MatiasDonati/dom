@@ -103,7 +103,7 @@ header h1{
 
 .modal-carrito button {
   padding: 5px;
-  border: none;
+  border: currentColor;
 }
 
 /* .modal-carrito h3 {
