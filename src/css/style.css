@@ -110,6 +110,12 @@ header h1{
   margin-bottom: 20px;
 } */
 
-#whats-app {
-  text-decoration: none;
+/* #whats-app {
+  background-color: black;
+} */
+
+.fa-brands {
+  color: #118C7E;
+  font-size: 20px;
+
 }

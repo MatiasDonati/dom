@@ -2,6 +2,7 @@ const whatsApp = () => {
     const whatsApp = document.getElementById('whats-app')
     whatsApp.addEventListener('click', ()=>{
         console.log('WhatsApp!');
+        window.open('https://walink.co/52ef48', '_blank');
         // Swal.fire({
         //     title: '<strong><i class="fa-brands fa-whatsapp"></i></strong>',
         //     // icon: 'info',

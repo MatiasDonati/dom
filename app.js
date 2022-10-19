@@ -26,6 +26,7 @@ const pintarProductosEnElDom = (productos) => {
                         </div>`
         contenedorProductos.appendChild(div)
         botonComprar(producto)
+        console.log(producto.cantidad);
     })
 }
 
