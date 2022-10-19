@@ -4,10 +4,6 @@ const carrito = async (productoId) => {
 
     const productos = await obtenerProductos()
 
-    if(localStorage.getItem('carrito')){
-        carritoDeCompras = obtenerCarritoStorage()
-    }
-
     let producto = productos.find( producto => producto.id == productoId);
     let productoRepetido = carritoDeCompras.find(producto => producto.id == productoId)
     // IF TERNARIO
