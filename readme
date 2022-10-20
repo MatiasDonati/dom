@@ -5,3 +5,7 @@ Tarjeta de Crédito para finalizar la compra.
 Formulario para mail visto en after class quiza.
 
 Ver multiple input ... quiza para solicitar datos y poder hacer algun tupo de validaciones, etc.
+
+El boton contacto borra todo el contenedor con id "prodcuto-contenedor"
+Ttiene que mostrar un formulario para mandar mail.
+
