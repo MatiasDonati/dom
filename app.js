@@ -3,7 +3,6 @@ const nombreSeccion = 'Controladores Midi'
 etiquetaTitulo.innerHTML = `<h2>...${nombreSeccion}</h2>`
 
 const mostrarProductos = async () => {
-
     const contenedorProductos = document.getElementById('producto-contenedor')
     const productos = await obtenerProductos()
     pintarProductosEnElDom(productos)
@@ -62,5 +61,5 @@ const botonComprar = ({id, nombre}) => {
                 newWindow: true,
             }).showToast();
         carrito(id)
-        })
+    })
 }

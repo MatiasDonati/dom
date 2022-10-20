@@ -11,7 +11,6 @@ const guardarEmail = (emailUsuario) => {
  localStorage.setItem('email', JSON.stringify(emailUsuario))
 }
 
-
 const obtenerEmail = () => {
     const emailStorage = JSON.parse(localStorage.getItem('email'));
     return emailStorage;
