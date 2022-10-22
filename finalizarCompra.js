@@ -32,4 +32,6 @@ const finalizarCompra = () => {
     </div>
     `;
     compraFinal()
+    nombreSeccion = 'Termina tu Compra!'
+    etiquetaTitulo.innerHTML = `<h2>...${nombreSeccion}</h2>`
 }

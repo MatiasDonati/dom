@@ -1,5 +1,5 @@
 const etiquetaTitulo = document.getElementById('titulo')
-const nombreSeccion = 'Controladores Midi'
+let nombreSeccion = 'Controladores Midi'
 etiquetaTitulo.innerHTML = `<h2>...${nombreSeccion}</h2>`
 
 const mostrarProductos = async () => {

@@ -34,6 +34,8 @@ const compraFinal = () => {
             guardarEmail(emailUsuario)
             guardarCarritoStorage(carritoDeCompras);
             pintarCarrito(carritoDeCompras);
+            nombreSeccion = 'Controladores Midi'
+            etiquetaTitulo.innerHTML = `<h2>...${nombreSeccion}</h2>`
         })
         }
     })

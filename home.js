@@ -1,6 +1,10 @@
+
+
 const botonHome = document.getElementById('home')
 
 botonHome.addEventListener('click', ()=>{
+    nombreSeccion = 'Controladores Midi'
+    etiquetaTitulo.innerHTML = `<h2>...${nombreSeccion}</h2>`
     console.log('HOME!');
     ordenarPorId()
     // location.reload()

@@ -1,7 +1,12 @@
+
 const botonContacto = document.getElementById('contacto')
 
 botonContacto.addEventListener('click', ()=>{
+
     console.log('Contacto Ok');
+    const etiquetaTitulo = document.getElementById('titulo')
+    nombreSeccion = 'Contactanos'
+    etiquetaTitulo.innerHTML = `<h2>...${nombreSeccion}</h2>`
     contenedorProductos.innerHTML= ""
     contenedorProductos.innerHTML=`
         <div class="container">
