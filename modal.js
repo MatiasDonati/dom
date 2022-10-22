@@ -9,6 +9,11 @@ const vaciarCarrito = document.getElementById('vaciar-carrito')
 abrirCarrito.addEventListener('click', ()=> {
     modalContenedor.classList.toggle('modal-active')
     console.log("modal activado !");
+    if(carritoDeCompras.length==0){
+        setTimeout(() => {
+            cerrarCarrito.click();
+            }, 2000);
+    }
 });
 
 cerrarCarrito.addEventListener('click', ()=> {
