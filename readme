@@ -1,9 +1,3 @@
 COSAS A HACER:
 
-Tarjeta de Crédito para finalizar la compra.
-
-Al confirmar la compra en el Alerta .. lleva a un formulario (finalizarCompra.js) .. lo muestra todo bien .. 
-pero no puedo agarrar el elemento y hacerle un preventDefault ... no me deja .. volvi atras deje comentado para seguirlo despues.
-
-
-A mejorar: que en el modal del carrito "vaciar Carrito" aparezca si hay producto . si no .. no
+Sacar los console.log

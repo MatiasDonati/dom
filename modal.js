@@ -107,25 +107,8 @@ comprar.addEventListener('click', ()=>{
             /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
                     // Las dos lineas de abajo son para hacer fomulario para terminar la compra!
-                    // cerrarCarrito.click()
-                    // finalizarCompra()
-                // Aca meter un Multiple Input !
-                    Swal.fire({
-                        title: 'Ingrese su Nombre',
-                        input: 'text',
-                        inputLabel: 'Ingrese su nombre por favor',
-                        inputPlaceholder: 'Ingrese su nombre',
-                        showCancelButton: false,
-                        }).then((result) => {
-                            nombre(result.value)
-                            emailStorage.email=="" ? Swal.fire(`<p>${nombreUsuario}</p>\nSu compra fue realizada con éxito!`, '', 'success') : Swal.fire(`<p>${nombreUsuario}\nCorreo: ${emailStorage.email}</p>\nSu compra fue realizada con éxito!`, '', 'success')
-                            carritoDeCompras=[]
-                            emailUsuario=null
-                            guardarEmail(emailUsuario)
-                            guardarCarritoStorage(carritoDeCompras);
-                            pintarCarrito(carritoDeCompras);
-                            cerrarCarrito.click();
-                            })
+                    cerrarCarrito.click()
+                    finalizarCompra()
                         }
                     })
                 }else{
