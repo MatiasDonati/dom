@@ -86,10 +86,9 @@ const nombre = (nombre) => {
     nombreUsuario = nombre
 }
 
-
-
 comprar.addEventListener('click', ()=>{
     const emailStorage = obtenerEmail()
+    console.log(emailStorage);
     console.log('Comprar Modal!');
     if(carritoDeCompras.length>0){
         totalPreciosStorage = carritoDeCompras.reduce((acc,item)=>acc + item.precio * item.cantidad,0)
@@ -111,7 +110,7 @@ comprar.addEventListener('click', ()=>{
                         showCancelButton: false,
                         }).then((result) => {
                             nombre(result.value)
-                            emailStorage==null ? Swal.fire(`<p>${nombreUsuario}</p>\nSu compra fue realizada con éxito!`, '', 'success') : Swal.fire(`<p>${nombreUsuario}\nCorreo: ${emailStorage.email}</p>\nSu compra fue realizada con éxito!`, '', 'success')
+                            emailStorage.email=="" ? Swal.fire(`<p>${nombreUsuario}</p>\nSu compra fue realizada con éxito!`, '', 'success') : Swal.fire(`<p>${nombreUsuario}\nCorreo: ${emailStorage.email}</p>\nSu compra fue realizada con éxito!`, '', 'success')
                             carritoDeCompras=[]
                             emailUsuario=null
                             guardarEmail(emailUsuario)

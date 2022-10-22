@@ -11,9 +11,10 @@ const bienvenida = () => {
                 }).then((result) => {
                     console.log(result.value);
                     email(result.value)
-                    if(result.value!=undefined){
-                        guardarEmail(emailUsuario)
+                    if(result.value==undefined){
+                        emailUsuario.email = ""
                     }
+                    guardarEmail(emailUsuario)
                 })
         }, 1000);
     }
@@ -25,4 +26,8 @@ const email = (email) => {
     emailUsuario = {
         email: email,
     }
+}
+
+if(localStorage.getItem('email')){
+    emailUsuario = obtenerEmail()
 }

@@ -1,9 +1,5 @@
 const botonContacto = document.getElementById('contacto')
 
-if(localStorage.getItem('email')){
-    emailUsuario = obtenerEmail()
-}
-
 botonContacto.addEventListener('click', ()=>{
     console.log('Contacto Ok');
     contenedorProductos.innerHTML= ""
@@ -20,7 +16,7 @@ botonContacto.addEventListener('click', ()=>{
                 </div>
                 <div class="col6">
                     <label for="email_id">Tu Email:</label>
-                    <input type="text" class="form-control" name="email_id" id="email_id" placeholder="${emailUsuario.email}">
+                    <input type="text" class="form-control" name="email_id" id="email_id" value="${emailUsuario.email}">
                 </div>
                 <div class="col6">
                     <button type="submit" id="button" class="btn btn-primary" value="Send Email">
