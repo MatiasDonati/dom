@@ -1,3 +1,14 @@
-COSAS A HACER:
+Marketplace de Controladores Midi
 
+Al ingresar al sitio solicita un mail que el usuario para recibir ofertas, puede completarlo o no.
+Eso se guarda en Storage para luego, en caso de realizar la compra o de querer contactarse se reutilice el Correo del usuario
+y no tenga que volver a completarlo.
+Se pueden ordenar los prodcutos por precio.
+Al comprar los productos se van al carrito de compras, donde se puede eliminar, agregar mas del mismo o eliminar cantidad.
+El carrito se puede vaciar por completo si el usuario desea.
+Cuando ya se está decidido a realizar la compra se solicita confirmacion y se lleva al usuario a un formulario para ingresar sus datos.
+Todos los datos tienen algun tipo de validacion.
+Cuando se finaliza la compra, se agradece y se refresca el DOM con la vista incial del sitio.
+
+COSAS A HACER:
 Sacar los console.log
