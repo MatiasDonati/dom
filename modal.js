@@ -4,7 +4,7 @@ const cerrarCarrito = document.getElementById('cerrar')
 const modalCarrito = document.querySelector('.modal-carrito')
 const carritoContenedor = document.getElementById('carrito-contenedor');
 const comprar = document.getElementById('compra-final')
-
+const vaciarCarrito = document.getElementById('vaciar-carrito')
 
 abrirCarrito.addEventListener('click', ()=> {
     modalContenedor.classList.toggle('modal-active')
@@ -101,6 +101,9 @@ comprar.addEventListener('click', ()=>{
             }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
+                    // Las dos lineas de abajo son para hacer fomulario para terminar la compra!
+                    // cerrarCarrito.click()
+                    // finalizarCompra()
                 // Aca meter un Multiple Input !
                     Swal.fire({
                         title: 'Ingrese su Nombre',
@@ -124,3 +127,9 @@ comprar.addEventListener('click', ()=>{
             }
     }
 );
+
+vaciarCarrito.addEventListener('click', () => {
+    carritoDeCompras = []
+    guardarCarritoStorage(carritoDeCompras);
+    pintarCarrito(carritoDeCompras);
+})

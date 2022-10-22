@@ -2,4 +2,5 @@ COSAS A HACER:
 
 Tarjeta de Crédito para finalizar la compra.
 
-Ver multiple input ... quiza para solicitar datos y poder hacer algun tupo de validaciones, etc.
+Al confirmar la compra en el Alerta .. lleva a un formulario (finalizarCompra.js) .. lo muestra todo bien .. 
+pero no puedo agarrar el elemento y hacerle un preventDefault ... no me deja .. volvi atras deje comentado para seguirlo despues.

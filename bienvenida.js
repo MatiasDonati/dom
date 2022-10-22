@@ -1,6 +1,6 @@
 const bienvenida = () => {
     emailStorage = obtenerEmail()
-    if(emailStorage==null){
+    if(emailStorage==null || emailUsuario.email==""){
         setTimeout(() => {
             Swal.fire({
                 title: 'Bienvenido',

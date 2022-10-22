@@ -1,5 +1,4 @@
 const enviarMail = () => {
-
     const btn = document.getElementById('button');
 
     document.getElementById('form').addEventListener('submit', function(event) {
@@ -26,6 +25,10 @@ const enviarMail = () => {
                 .then(() => {
                         btn.value = 'Send Email';
                         Swal.fire(`Gracias ${nombreContacto.value}!\nEl correo fue enviado con éxito!`, '', 'success')
+                        emailUsuario = {
+                            email: ""
+                        }
+                        guardarEmail(emailUsuario)
                         //alert('Email Enviado!');
                 }, (err) => {
                     btn.value = 'Send Email';
@@ -35,4 +38,5 @@ const enviarMail = () => {
             }
         }
     );
+
 };
