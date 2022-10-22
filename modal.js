@@ -132,4 +132,7 @@ vaciarCarrito.addEventListener('click', () => {
     carritoDeCompras = []
     guardarCarritoStorage(carritoDeCompras);
     pintarCarrito(carritoDeCompras);
+    setTimeout(() => {
+    cerrarCarrito.click();
+    }, 800);
 })
