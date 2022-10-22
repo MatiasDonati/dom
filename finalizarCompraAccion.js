@@ -30,7 +30,7 @@ const compraFinal = () => {
                     ordenarPorId()
             }
             carritoDeCompras=[]
-            emailUsuario=null
+            emailUsuario.email=""
             guardarEmail(emailUsuario)
             guardarCarritoStorage(carritoDeCompras);
             pintarCarrito(carritoDeCompras);

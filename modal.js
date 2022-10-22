@@ -133,6 +133,9 @@ vaciarCarrito.addEventListener('click', () => {
             showConfirmButton: false,
             timer: 1500
         })
+        setTimeout(() => {
+            cerrarCarrito.click();
+            }, 2000);
     }else{
         Swal.fire({
             title: `Desea realizar vaciar el Carrito?`,
@@ -145,10 +148,10 @@ vaciarCarrito.addEventListener('click', () => {
                     carritoDeCompras = []
                     guardarCarritoStorage(carritoDeCompras);
                     pintarCarrito(carritoDeCompras);
+                    setTimeout(() => {
+                        cerrarCarrito.click();
+                        }, 1500);
                 }
             })
     }
-    setTimeout(() => {
-        cerrarCarrito.click();
-        }, 1500);
 })
