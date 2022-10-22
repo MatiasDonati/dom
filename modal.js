@@ -119,30 +119,48 @@ comprar.addEventListener('click', ()=>{
                             guardarEmail(emailUsuario)
                             guardarCarritoStorage(carritoDeCompras);
                             pintarCarrito(carritoDeCompras);
+                            cerrarCarrito.click();
                             })
                         }
                     })
                 }else{
-                    Swal.fire('Debera seleccionar un producto.', '', 'error')
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Elejí tus productos para comprar!',
+                        showConfirmButton: true,
+                        timer: 2500
+                    })
+                    setTimeout(() => {
+                        cerrarCarrito.click();
+                        }, 3500);
             }
     }
 );
 
 vaciarCarrito.addEventListener('click', () => {
-    Swal.fire({
-        title: `Desea realizar vaciar el Carrito?`,
-        showDenyButton: true,
-        // showCancelButton: true,
-        confirmButtonText: 'Si',
-        denyButtonText: `No`,
-        }).then((result) => {
-            if (result.isConfirmed) {
-                carritoDeCompras = []
-                guardarCarritoStorage(carritoDeCompras);
-                pintarCarrito(carritoDeCompras);
-                setTimeout(() => {
-                cerrarCarrito.click();
-                }, 800);
-            }
+    if(carritoDeCompras.length==0){
+        Swal.fire({
+            icon: 'error',
+            title: 'El carrito se encuentra vacío',
+            showConfirmButton: false,
+            timer: 1500
         })
+    }else{
+        Swal.fire({
+            title: `Desea realizar vaciar el Carrito?`,
+            showDenyButton: true,
+            // showCancelButton: true,
+            confirmButtonText: 'Si',
+            denyButtonText: `No`,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    carritoDeCompras = []
+                    guardarCarritoStorage(carritoDeCompras);
+                    pintarCarrito(carritoDeCompras);
+                }
+            })
+    }
+    setTimeout(() => {
+        cerrarCarrito.click();
+        }, 1500);
 })
