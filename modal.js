@@ -129,10 +129,20 @@ comprar.addEventListener('click', ()=>{
 );
 
 vaciarCarrito.addEventListener('click', () => {
-    carritoDeCompras = []
-    guardarCarritoStorage(carritoDeCompras);
-    pintarCarrito(carritoDeCompras);
-    setTimeout(() => {
-    cerrarCarrito.click();
-    }, 800);
+    Swal.fire({
+        title: `Desea realizar vaciar el Carrito?`,
+        showDenyButton: true,
+        // showCancelButton: true,
+        confirmButtonText: 'Si',
+        denyButtonText: `No`,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                carritoDeCompras = []
+                guardarCarritoStorage(carritoDeCompras);
+                pintarCarrito(carritoDeCompras);
+                setTimeout(() => {
+                cerrarCarrito.click();
+                }, 800);
+            }
+        })
 })
