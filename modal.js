@@ -6,13 +6,18 @@ const carritoContenedor = document.getElementById('carrito-contenedor');
 const comprar = document.getElementById('compra-final')
 const vaciarCarrito = document.getElementById('vaciar-carrito')
 
+const cerrarModalTimer = (tiempo) => {
+    setTimeout(() => {
+        cerrarCarrito.click();
+        }, tiempo);
+}
+
 abrirCarrito.addEventListener('click', ()=> {
     modalContenedor.classList.toggle('modal-active')
     console.log("modal activado !");
+    mensajeCarritoVacio()
     if(carritoDeCompras.length==0){
-        setTimeout(() => {
-            cerrarCarrito.click();
-            }, 2000);
+        cerrarModalTimer(2500)
     }
 });
 
@@ -43,12 +48,17 @@ carritoContenedor.addEventListener('click', (e) => {
         }).then((result)=>{
             console.log(result.isConfirmed);
             if(result.isConfirmed){
-                Swal.fire(
-                    'Eliminado!',
-                    'El producto se elimino de su compra.',
-                    'success'
-                )
+                Swal.fire({
+                    icon: 'success',
+                    title: 'El producto se elimino de su compra.',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 eliminarProducto(e.target.parentNode.value);
+                mensajeCarritoVacio()
+                if(carritoDeCompras.length==0){
+                    cerrarModalTimer(2500)
+                }
             }
         })
     }
@@ -93,7 +103,6 @@ const nombre = (nombre) => {
 
 comprar.addEventListener('click', ()=>{
     const emailStorage = obtenerEmail()
-    console.log(emailStorage);
     console.log('Comprar Modal!');
     if(carritoDeCompras.length>0){
         totalPreciosStorage = carritoDeCompras.reduce((acc,item)=>acc + item.precio * item.cantidad,0)
@@ -104,13 +113,11 @@ comprar.addEventListener('click', ()=>{
             confirmButtonText: 'Si',
             denyButtonText: `Todavía no`,
             }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
-                    // Las dos lineas de abajo son para hacer fomulario para terminar la compra!
                     cerrarCarrito.click()
                     finalizarCompra()
-                        }
-                    })
+                    }
+                })
                 }else{
                     Swal.fire({
                         icon: 'error',
@@ -118,10 +125,8 @@ comprar.addEventListener('click', ()=>{
                         showConfirmButton: true,
                         timer: 2500
                     })
-                    setTimeout(() => {
-                        cerrarCarrito.click();
-                        }, 3500);
-            }
+                    cerrarModalTimer(3500)
+                }
     }
 );
 
@@ -133,9 +138,7 @@ vaciarCarrito.addEventListener('click', () => {
             showConfirmButton: false,
             timer: 1500
         })
-        setTimeout(() => {
-            cerrarCarrito.click();
-            }, 2000);
+        cerrarModalTimer(2000)
     }else{
         Swal.fire({
             title: `Desea realizar vaciar el Carrito?`,
@@ -145,13 +148,29 @@ vaciarCarrito.addEventListener('click', () => {
             denyButtonText: `No`,
             }).then((result) => {
                 if (result.isConfirmed) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Carrito vacío',
+                        showConfirmButton: false,
+                        timer: 1000
+                    })
                     carritoDeCompras = []
                     guardarCarritoStorage(carritoDeCompras);
                     pintarCarrito(carritoDeCompras);
-                    setTimeout(() => {
-                        cerrarCarrito.click();
-                        }, 1500);
+                    mensajeCarritoVacio()
+                    cerrarModalTimer(2750)
                 }
             })
     }
 })
+
+const mensajeCarritoVacio = () => {
+    if(carritoDeCompras.length==0){
+        const contenedorCarrito = document.getElementById('carrito-contenedor');
+        contenedorCarrito.innerHTML = ""
+        let div = document.createElement('div')
+        div.classList.add('productoEnCarrito')
+        div.innerHTML = `<p>El carrito se encuentra vacío</p>`
+        contenedorCarrito.appendChild(div)
+    }
+}

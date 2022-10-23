@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', ()=>{
     mostrarProductos();
-    bienvenida()
+    setTimeout(() => {
+        bienvenida()
+    }, 2500);
 
     if(localStorage.getItem('carrito')){
         carritoDeCompras = obtenerCarritoStorage()

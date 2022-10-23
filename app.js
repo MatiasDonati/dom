@@ -37,7 +37,7 @@ const botonComprar = ({id, nombre}) => {
                 text: 'Ya casi es tuyo.',
                 // position: 'top-end',
                 showConfirmButton: false,
-                timer: 2000,
+                timer: 1020,
                 imageUrl: `src/img/${id}.webp`,
                 imageWidth: 300,
                 imageHeight: 150,
@@ -57,7 +57,7 @@ const botonComprar = ({id, nombre}) => {
                     background: 'linear-gradient(to right, #00b09b, #96c92d)'
                 },
                 // destination:'https://www.google.com.ar/',
-                newWindow: true,
+                // newWindow: true,
             }).showToast();
         carrito(id)
     })

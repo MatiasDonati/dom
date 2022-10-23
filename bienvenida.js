@@ -5,8 +5,9 @@ const bienvenida = () => {
             Swal.fire({
                 title: 'Bienvenido',
                 input: 'email',
-                inputLabel: 'Enterate de nuestas Ofertas!',
+                inputLabel: `Ingresa tu correo para el sorteo de un Minilab Edicion Especial!\nEnterate de nuestas Ofertas!🎹🎹`,
                 inputPlaceholder: 'Ingrese su email',
+                imageUrl: `src/img/4.webp`,
                 showCancelButton: true,
                 }).then((result) => {
                     console.log(result.value);
