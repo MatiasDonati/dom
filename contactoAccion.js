@@ -4,7 +4,6 @@ const enviarMail = () => {
 
     document.getElementById('form').addEventListener('submit', function(event) {
         event.preventDefault();
-        // btn.innerHTML = "<p>Enviando...</p>"
         btn.style.display = 'none'
         mensajeCorreoEnviado.innerHTML = `<p>Enviando...</p>`
 
@@ -28,7 +27,10 @@ const enviarMail = () => {
 
             emailjs.sendForm(serviceID, templateID, this)
                 .finally(()=>{
-                    mensajeCorreoEnviado.innerHTML = `<p>Gracias! correo enviado, a la brevedad nos podnremos en contacto contigo!</p>`
+                    nombreSeccion = 'Controladores Midi'
+                    etiquetaTitulo.innerHTML = `<h2>...${nombreSeccion}</h2>`
+                    ordenarPorId()
+                    // mensajeCorreoEnviado.innerHTML = `<p>Gracias! correo enviado, a la brevedad nos podnremos en contacto contigo!</p>`
                 })
                 .then(() => {
                         btn.value = 'Send Email';
