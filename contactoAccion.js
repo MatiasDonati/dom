@@ -1,8 +1,13 @@
 const enviarMail = () => {
     const btn = document.getElementById('button');
+    let mensajeCorreoEnviado = document.getElementById('divButton')
 
     document.getElementById('form').addEventListener('submit', function(event) {
         event.preventDefault();
+        // btn.innerHTML = "<p>Enviando...</p>"
+        btn.style.display = 'none'
+        mensajeCorreoEnviado.innerHTML = `<p>Enviando...</p>`
+
 
         const nombreContacto = document.getElementById('from_name')
         const mensajeContacto = document.getElementById('message')
@@ -22,6 +27,9 @@ const enviarMail = () => {
             const templateID = 'template_s4itemf';
 
             emailjs.sendForm(serviceID, templateID, this)
+                .finally(()=>{
+                    mensajeCorreoEnviado.innerHTML = `<p>Gracias! correo enviado, a la brevedad nos podnremos en contacto contigo!</p>`
+                })
                 .then(() => {
                         btn.value = 'Send Email';
                         Swal.fire(`Gracias ${nombreContacto.value}!\nEl correo fue enviado con éxito!`, '', 'success')

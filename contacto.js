@@ -23,7 +23,7 @@ botonContacto.addEventListener('click', ()=>{
                     <label for="email_id">Tu Email:</label>
                     <input type="text" class="form-control" name="email_id" id="email_id" value="${emailUsuario.email}">
                 </div>
-                <div class="col6">
+                <div class="col6" id="divButton">
                     <button type="submit" id="button" class="btn btn-primary" value="Send Email">
                     Enviar
                     </button>
