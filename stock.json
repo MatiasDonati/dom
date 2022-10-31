@@ -4,7 +4,7 @@
     "nombre": "Akai LPK25",
     "desc": "Controlador Midi",
     "precio": 9000,
-    "img": "src/img/1.webp",
+    "img": "public/img/1.webp",
     "cantidad": 1
   },
   {
@@ -12,7 +12,7 @@
     "nombre": "Arturia KeyLab 49 Mkii",
     "desc": "Controlador Midi",
     "precio": 1500,
-    "img": "src/img/2.webp",
+    "img": "public/img/2.webp",
     "cantidad": 1
   },
   {
@@ -20,7 +20,7 @@
     "nombre": "Arturia Key Lab 61",
     "desc": "Controlador Midi",
     "precio": 2000,
-    "img": "src/img/3.webp",
+    "img": "public/img/3.webp",
     "cantidad": 1
   },
   {
@@ -28,7 +28,7 @@
     "nombre": "Minilab Edicion Especial",
     "desc": "Controlador Midi",
     "precio": 2100,
-    "img": "src/img/4.webp",
+    "img": "public/img/4.webp",
     "cantidad": 1
   },
   {
@@ -36,7 +36,7 @@
     "nombre": "MiniLab",
     "desc": "Controlador Midi",
     "precio": 3000,
-    "img": "src/img/5.webp",
+    "img": "public/img/5.webp",
     "cantidad": 1
   },
   {
@@ -44,7 +44,7 @@
     "nombre": "MPK mini",
     "desc": "Controlador Midi",
     "precio": 3500,
-    "img": "src/img/6.webp",
+    "img": "public/img/6.webp",
     "cantidad": 1
   }
 ]

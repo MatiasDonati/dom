@@ -38,7 +38,7 @@ const botonComprar = ({id, nombre}) => {
                 // position: 'top-end',
                 showConfirmButton: false,
                 timer: 1020,
-                imageUrl: `src/img/${id}.webp`,
+                imageUrl: `public/img/${id}.webp`,
                 imageWidth: 300,
                 imageHeight: 150,
                 imageAlt: 'Custom image',

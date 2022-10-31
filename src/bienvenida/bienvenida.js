@@ -7,7 +7,7 @@ const bienvenida = () => {
                 input: 'email',
                 inputLabel: `Ingresa tu correo para el sorteo de un Minilab Edicion Especial!\nEnterate de nuestas Ofertas!🎹🎹`,
                 inputPlaceholder: 'Ingrese su email',
-                imageUrl: `src/img/4.webp`,
+                imageUrl: `public/img/4.webp`,
                 showCancelButton: true,
                 }).then((result) => {
                     console.log(result.value);
